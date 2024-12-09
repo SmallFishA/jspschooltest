@@ -97,9 +97,15 @@
 
     </div>
 
-    <div class="page1">上架最新图书</div>
-    <jsp:include page="booklist.jsp"/>
+    <div class="page1">上架最新图书
+        <jsp:include page="book.jsp"/>
+    </div>
 </div>
+
+
 <jsp:include page="bottom.jsp"/>
+
+
+
 </body>
 </html>

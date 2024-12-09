@@ -5,9 +5,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 @WebServlet("/loginServlet")
 public class servlet extends HttpServlet {
@@ -45,8 +46,6 @@ public class servlet extends HttpServlet {
             if (rs.next()) {
                 // 用户正确
                 // 重定向到欢迎页面，并传递书籍列表
-                List<Book> books = getBooksFromDatabase(conn);
-                request.setAttribute("books", books);
                 response.sendRedirect("welcome.jsp");
             } else {
                 // 用户错误
@@ -65,25 +64,5 @@ public class servlet extends HttpServlet {
         } finally {
             out.close();
         }
-    }
-
-
-
-    private List<Book> getBooksFromDatabase(Connection conn) throws SQLException {
-        List<Book> books = new ArrayList<>();
-        String sql = "SELECT bookname, author, publish , price FROM books";
-        try (PreparedStatement stmt = conn.prepareStatement(sql);
-             ResultSet rs = stmt.executeQuery()) {
-
-            while (rs.next()) {
-                Book book = new Book();
-                book.setBookname(rs.getString("bookname"));
-                book.setAuthor(rs.getString("author"));
-                book.setPublish(rs.getString("publish"));
-                book.setPrice(rs.getString("price"));
-                books.add(book);
-            }
-        }
-        return books;
     }
 }

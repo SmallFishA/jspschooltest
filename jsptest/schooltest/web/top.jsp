@@ -8,9 +8,11 @@
     <title>Title</title>
     <style>
         .title{
-            width: 1000px;
+            width: 1001px;
             height: 200px;
             margin:auto;
+            background-image:url("./image/nailong.jpg")
+
         }
         .p{
             color:red;
