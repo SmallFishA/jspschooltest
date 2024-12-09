@@ -63,7 +63,7 @@
 
     <div class="login">
         <div class="box1">
-            <div class="logintop"><p>Welcome, ${sessionScope.username}!</p></div>
+            <div class="logintop"><p>欢迎，超级奶龙大王</p></div>
 
             <div class="box2">
                 <ul>
