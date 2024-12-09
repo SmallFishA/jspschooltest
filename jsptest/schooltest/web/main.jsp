@@ -61,13 +61,13 @@
         <div class="logintop"><p>会员登录</p></div>
 
         <div>
-        <form action="LoginServlet" method="post">
+        <form action="loginServlet" method="post">
             用户名：<input type="text" id= "username" name="username"><br>
             密码：<input type="password" id="password" name="password"><br>
             <div class="button"><button>登录</button>&nbsp&nbsp&nbsp<button>注册</button></div>
         </form>
             <c:if test="${not empty error}">
-                <p style="color: red">${error}</p>
+                <p style="color:red;">${error}</p>
             </c:if>
         </div>
 

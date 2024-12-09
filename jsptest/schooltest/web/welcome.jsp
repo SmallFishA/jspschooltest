@@ -3,6 +3,7 @@
   User: JiangXi_WuYanZu
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
     <title>Title</title>
@@ -62,7 +63,7 @@
 
     <div class="login">
         <div class="box1">
-            <div class="logintop"><p>Welcome, ${sessionScope.user}!</p></div>
+            <div class="logintop"><p>Welcome, ${sessionScope.username}!</p></div>
 
             <div class="box2">
                 <ul>
@@ -97,7 +98,7 @@
     </div>
 
     <div class="page1">上架最新图书</div>
-
+    <jsp:include page="booklist.jsp"/>
 </div>
 <jsp:include page="bottom.jsp"/>
 </body>
