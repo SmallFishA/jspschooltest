@@ -90,7 +90,7 @@
 
         <div>
             <div class="logintop"><p>图书搜索</p></div>
-            关键词：<input type="text" name="search"><br>
+            关键词<input type="text" name="search"><br>
             <div class="button"><button>搜索</button></div>
         </div>
 
